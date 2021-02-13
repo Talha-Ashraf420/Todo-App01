@@ -1,0 +1,38 @@
+{
+  "name": "finance",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+"heroku-postbuild":"ng build --prod",
+"start": "node ./bin/www"
+  },
+"engines":{
+"node":"14.15.1",
+"npm":"6.14.8"
+},
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "formidable": "^1.2.2",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jose": "^1.28.0",
+    "lodash": "^4.17.20",
+    "md5": "^2.3.0",
+    "mongoose": "^5.10.15",
+    "morgan": "~1.9.1",
+    "nanoid": "^3.1.20",
+    "shortid": "^2.2.16",
+    "skipper": "^0.8.7",
+    "util": "^0.12.3"
+  },
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,108 @@
+.container-fluid{
+    margin-top: 13%;
+}
+.card{
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  
+    box-shadow:         3px 3px 5px 6px #ccc;  
+    border-radius: 5%;
+    margin: 30px;
+
+}
+.label-item{
+    margin-left:10px !important ;
+}
+.borderCard{
+    border-top: 5px solid #3e1e59;
+}
+.todo-icon{
+margin-right: 10px;
+}
+.centerItems{
+   display: flex;
+   justify-content: center;
+}
+
+.big-checkbox {width: 20px; height: 20px;}
+.float{
+    cursor: pointer;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color: #3e1e59;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1111;
+}
+.my-float{
+	margin-top:18px !important;
+}
+
+#myModal{
+    height: 400px;
+    top: calc(50% - 200px) !important;
+}
+.check-Icon{
+    margin-right: 10px;
+}
+.add-button{
+    width: 70%;
+    margin-bottom: 20px;
+}
+.form-check .custom-control-label {
+    padding-left:15px;
+    padding-top: 5px;
+  }
+  .form-check .custom-control-label::after,
+  .form-check .custom-control-label::before {
+    height: 25px;
+    width: 25px;
+  }
+ 
+  /* When I remove background the icon goes back to that default size */
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #3e1e59 !important;
+    box-shadow:none !important;
+  }
+  .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow:none !important;
+  }
+  .strikethrough:checked + .strikeThis {
+    text-decoration: line-through
+  }
+  .form-control:focus {
+    border-color: #3e1e59 !important;
+    box-shadow: 0 0 5px #3e1e59 !important;
+  }
+  .graduate-icon{
+      color: #3e1e59;
+      zoom: 2.5;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  .paramHeading{
+      display: flex;
+  }
+  h4{
+    margin-top: 20px;
+    font-weight: bolder;
+
+  }
+  h6{
+      padding-left: 100px;
+      font-weight: bold;
+  }
+  .spinner-grow{
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 50px;
+    width: 50px; 
+    height: 50px;
+}
+.text-success{
+    color: #3e1e59 !important;
+}

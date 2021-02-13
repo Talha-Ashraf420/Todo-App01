@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="row centerItems no-gutters">
+       
+            <div class="card borderCard" style="width: 40rem;">
+              
+              <span class="paramHeading"> <fa-icon  [icon]="faGraduationCap" class="graduate-icon"></fa-icon>   <h4 >{{category}}</h4></span>
+              <h6>Tasks</h6>
+              <div *ngIf="showSpinner==true" class="spinner-grow text-success" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+                <div class="card-body">
+                  <ng-container *ngFor="let item of filteredCategory;">
+                    <h5 *ngIf="item?.category?.tasks?.length<1">No item found...</h5>
+                  <h5 class="card-subtitle mb-2">
+                      <div class="form-check">
+                        <ng-container *ngFor="let task of item?.category?.tasks;let i=index">
+                        <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input strikethrough"  id="hi{{i+1}}">
+                                <label class="custom-control-label mt-2 strikeThis" for="hi{{i+1}}">
+                                  {{task}}
+                                </label>
+                                <hr>
+                                <br>
+                        </div>
+                    </ng-container>
+
+                      </div>
+                   </h5>
+                
+                  </ng-container>
+                </div>
+             <div class="row">
+                <div class="col text-center">
+                    <button (click)="hideMessage()"  data-toggle="modal"  data-target="#myModal" data-whatever="@mdo" class="btn btn-primary add-button" type="button"><fa-icon  [icon]="faPlusSquare" class="todo-icon"></fa-icon>  Add New Task</button>
+                </div>
+             </div>
+              </div>
+      
+    </div>
+</div>    
+<div class="modal fade"   data-backdrop="true" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <h4 *ngIf="successNote==true"  class="text-success text-center mb-3"><span><fa-icon class="check-Icon" [icon]="faCheck"></fa-icon>Form submitted Successfully</span></h4>
+            <form *ngIf="showForm==true" [formGroup]="taskForm" novalidate >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Task Name</label>
+                            <input type="text" class="form-control"  formControlName="taskName" >
+                            <div *ngIf="validate && f.taskName.errors" class="red-txt">
+                                <div style="color: red;" *ngIf=" f.taskName.errors.required">Task Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Category Name</label>
+                            <select class="form-control" formControlName="categoryName" 
+                            (change)='onOptionsSelected($event)'
+                            id="exampleFormControlSelect1">
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="{{item?._id}}" *ngFor="let item of categoryData">{{item?.category?.categoryName}}
+                            </option>
+                        </select>
+                            <div *ngIf="validate && f.categoryName.errors" class="red-txt">
+                                <div style="color: red;" *ngIf=" f.categoryName.errors.required">Category Name is required</div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button (click)="submitForm()"  class="btn btn-primary"> Add Task </button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+      </div>
+    </div>
+   
+  </div>

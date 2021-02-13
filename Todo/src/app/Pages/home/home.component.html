@@ -1,0 +1,59 @@
+<div class="container-fluid">
+<div class="row centerItems no-gutters">
+  <div *ngIf="showSpinner==true" class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <h4 *ngIf="categoryData?.length<1">No category found... Tap + button to add category.</h4>
+
+    <ng-container *ngFor="let item of categoryData">
+        <div class="card borderCard" style="width: 10rem;">
+            <div class="card-body">
+              <h5 class="card-title"><fa-icon (click)="navigatetoTask(item?.category?.categoryName)" [icon]="faEdit" class="todo-icon"></fa-icon></h5>
+              <br>
+              <h5 class="card-subtitle mb-2">{{item?.category?.categoryName}}</h5>
+            <b> <p class="card-text text-muted"> {{item?.category?.tasks?.length}} tasks</p></b>
+            </div>
+          </div>
+    </ng-container>
+    
+</div>
+<div class="modal fade"   data-backdrop="true" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <div class="modal-body">
+          <h4 *ngIf="successNote==true"  class="text-success text-center mb-3"><span><fa-icon class="check-Icon" [icon]="faCheck"></fa-icon>Form submitted Successfully</span></h4>
+            <form *ngIf="showForm==true" [formGroup]="categoryForm" novalidate >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Category Name</label>
+                            <input type="text" class="form-control"  formControlName="categoryName" >
+                            <div *ngIf="validate && f.categoryName.errors" class="red-txt">
+                                <div style="color: red;" *ngIf=" f.categoryName.errors.required">Category Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button (click)="submitForm()"  class="btn btn-primary"> Add Category </button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+<a  data-toggle="modal" (click)="hideMessage()" data-target="#myModal" data-whatever="@mdo" class="float">
+  <div class="my-float">
+    <fa-icon  [icon]="faPlus"></fa-icon>
+  </div>
+    </a>

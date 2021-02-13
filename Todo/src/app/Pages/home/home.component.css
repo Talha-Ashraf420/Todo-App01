@@ -1,0 +1,57 @@
+.container-fluid{
+    margin-top: 15%;
+}
+.card{
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  
+    box-shadow:         3px 3px 5px 6px #ccc;  
+    border-radius: 5%;
+    margin: 30px;
+
+}
+.borderCard{
+    border-top: 5px solid #3e1e59;
+}
+.todo-icon{
+    zoom: 1.4;
+    color:#3e1e59;
+    cursor: pointer;
+}
+.centerItems{
+   display: flex;
+   justify-content: center;
+}
+.spinner-grow{
+    margin-top: 8%;
+    width: 50px; 
+    height: 50px;
+}
+.text-success{
+    color: #3e1e59 !important;
+}
+
+.float{
+    cursor: pointer;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color: #3e1e59;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1111;
+}
+.my-float{
+	margin-top:18px !important;
+}
+
+#myModal{
+    height: 400px;
+    top: calc(50% - 200px) !important;
+}
+.check-Icon{
+    margin-right: 10px;
+}
