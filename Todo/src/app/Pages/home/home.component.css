@@ -29,6 +29,9 @@
 .text-success{
     color: #3e1e59 !important;
 }
+.heading{
+    margin-top: 10%;
+}
 
 .float{
     cursor: pointer;
